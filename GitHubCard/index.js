@@ -59,18 +59,12 @@ const followersArray = [];
 
 //create function to create component from userInfoObj (received from github)
 function userCardConstructor(userInfoObj) {
-  //give card div class 'card'
-
   //give img src attribute
 
-  //give card-info div class 'card-info'
-
-  //give h3 class of 'name'
-
-  //give first p element class of 'username'
   //give 6 p elements their textContent
 
   //give 'a' element an href attribute
+  //give 'a' element textContent
 
   //append 'a' element to third p element
   //append h3 and 6 p elements to card-info div
@@ -78,18 +72,26 @@ function userCardConstructor(userInfoObj) {
 
   //create card div
   const card = document.createElement('div');
+  //give card div class 'card'
+  card.classList.add('card');
 
   //create img
   const cardImg = document.createElement('img');
 
   //create card-info div
   const cardInfo = document.createElement('div');
+  //give card-info div class 'card-info'
+  cardInfo.classList.add('card-info');
 
   //create h3
   const name = document.createElement('h3');
+  //give h3 class of 'name'
+  name.classList.add('name');
 
   //create username p element
   const username = document.createElement('p');
+  //give first p element class of 'username'
+  username.classList.add('username');
 
   //create location p element
   const location = document.createElement('p');
