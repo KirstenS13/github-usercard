@@ -4,7 +4,7 @@
 */
 
 //send GET request with axios
-axios.get('https://api.github.com/users/KirstenS13')
+/* axios.get('https://api.github.com/users/KirstenS13')
   //console.log successful GET request
   .then((response) => {
     console.log(response)
@@ -12,7 +12,7 @@ axios.get('https://api.github.com/users/KirstenS13')
   //console.log failed GET request
   .catch((error) => {
     console.log(error)
-  })
+  }) */
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -59,9 +59,6 @@ const followersArray = [];
 
 //create function to create component from userInfoObj (received from github)
 function userCardConstructor(userInfoObj) {
-  //give 'a' element an href attribute
-  //give 'a' element textContent
-
   //append 'a' element to third p element
   //append h3 and 6 p elements to card-info div
   //append img and card-info div to card div
@@ -114,6 +111,9 @@ function userCardConstructor(userInfoObj) {
 
   //create an 'a' element
   const profileLink = document.createElement('a');
+  //give 'a' element an href attribute
+  profileLink.href = userInfoObj.address;
+  profileLink.textContent = userInfoObj.address;
 }
 
 /* List of LS Instructors Github username's: 
