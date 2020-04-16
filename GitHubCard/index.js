@@ -3,10 +3,13 @@
            https://api.github.com/users/<your name>
 */
 
+//send GET request with axios
 axios.get('https://api.github.com/users/KirstenS13')
+  //console.log successful GET request
   .then((response) => {
     console.log(response)
   })
+  //console.log failed GET request
   .catch((error) => {
     console.log(error)
   })
@@ -53,6 +56,59 @@ const followersArray = [];
 </div>
 
 */
+
+//create function to create component from userInfoObj (received from github)
+function userCardConstructor(userInfoObj) {
+  //give card div class 'card'
+
+  //give img src attribute
+
+  //give card-info div class 'card-info'
+
+  //give h3 class of 'name'
+
+  //give first p element class of 'username'
+  //give 6 p elements their textContent
+
+  //give 'a' element an href attribute
+
+  //append 'a' element to third p element
+  //append h3 and 6 p elements to card-info div
+  //append img and card-info div to card div
+
+  //create card div
+  const card = document.createElement('div');
+
+  //create img
+  const cardImg = document.createElement('img');
+
+  //create card-info div
+  const cardInfo = document.createElement('div');
+
+  //create h3
+  const name = document.createElement('h3');
+
+  //create username p element
+  const username = document.createElement('p');
+
+  //create location p element
+  const location = document.createElement('p');
+
+  //create profile p element
+  const profile = document.createElement('p');
+
+  //create followers p element
+  const followers = document.createElement('p');
+
+  //create following p element
+  const following = document.createElement('p');
+
+  //create bio p element
+  const bio = document.createElement('p');
+
+  //create an 'a' element
+  const profileLink = document.createElement('a');
+}
 
 /* List of LS Instructors Github username's: 
   tetondan
