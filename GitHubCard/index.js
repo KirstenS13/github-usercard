@@ -142,6 +142,11 @@ function userCardConstructor(userInfoObj) {
 //create card of my info
 getUserInfo('KirstenS13');
 
+//create cards from followersArray
+followersArray.forEach((handleStr) => {
+  getUserInfo(handleStr);
+})
+
 /* List of LS Instructors Github username's: 
   tetondan
   dustinmyers
