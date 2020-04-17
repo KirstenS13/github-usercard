@@ -72,7 +72,7 @@ function userCardConstructor(userInfoObj) {
   //create img
   const cardImg = document.createElement('img');
   //give img src attribute
-  cardImg.src = userInfoObj.avatar_url;
+  cardImg.src = userInfoObj.data.avatar_url;
 
   //create card-info div
   const cardInfo = document.createElement('div');
@@ -83,16 +83,17 @@ function userCardConstructor(userInfoObj) {
   const name = document.createElement('h3');
   //give h3 class of 'name'
   name.classList.add('name');
+  name.textContent = userInfoObj.data.login;
 
   //create username p element
   const username = document.createElement('p');
   //give first p element class of 'username'
   username.classList.add('username');
-  username.textContent = userInfoObj.login;
+  username.textContent = `${userInfoObj.data.name}`;
 
   //create location p element
   const location = document.createElement('p');
-  location.textContent = `Location: ${userInfoObj.location}`;
+  location.textContent = `Location: ${userInfoObj.data.location}`;
 
   //create profile p element
   const profile = document.createElement('p');
@@ -100,21 +101,21 @@ function userCardConstructor(userInfoObj) {
 
   //create followers p element
   const followers = document.createElement('p');
-  followers.textContent = `Followers: ${userInfoObj.followers}`;
+  followers.textContent = `Followers: ${userInfoObj.data.followers}`;
 
   //create following p element
   const following = document.createElement('p');
-  following.textContent = `Following: ${userInfoObj.following}`;
+  following.textContent = `Following: ${userInfoObj.data.following}`;
 
   //create bio p element
   const bio = document.createElement('p');
-  bio.textContent = `Bio: ${userInfoObj.bio}`;
+  bio.textContent = `Bio: ${userInfoObj.data.bio}`;
 
   //create an 'a' element
   const profileLink = document.createElement('a');
   //give 'a' element an href attribute
   profileLink.href = userInfoObj.url;
-  profileLink.textContent = userInfoObj.url;
+  profileLink.textContent = `${userInfoObj.data.url}`;
 
   //append 'a' element to third p element
   profile.appendChild(profileLink);
