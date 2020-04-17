@@ -59,10 +59,6 @@ const followersArray = [];
 
 //create function to create component from userInfoObj (received from github)
 function userCardConstructor(userInfoObj) {
-  //append 'a' element to third p element
-  //append h3 and 6 p elements to card-info div
-  //append img and card-info div to card div
-
   //create card div
   const card = document.createElement('div');
   //give card div class 'card'
@@ -114,6 +110,22 @@ function userCardConstructor(userInfoObj) {
   //give 'a' element an href attribute
   profileLink.href = userInfoObj.address;
   profileLink.textContent = userInfoObj.address;
+
+  //append 'a' element to third p element
+  profile.appendChild(profileLink);
+  
+  //append h3 and 6 p elements to card-info div
+  cardInfo.appendChild(name);
+  cardInfo.appendChild(username);
+  cardInfo.appendChild(location);
+  cardInfo.appendChild(profile);
+  cardInfo.appendChild(followers);
+  cardInfo.appendChild(following);
+  cardInfo.appendChild(bio);
+
+  //append img and card-info div to card div
+  card.appendChild(cardImg);
+  card.appendChild(cardInfo);
 }
 
 /* List of LS Instructors Github username's: 
