@@ -6,8 +6,9 @@
 //select cards from html
 const cards = document.querySelector('.cards');
 
-//send GET request with axios
-axios.get('https://api.github.com/users/KirstenS13')
+function getUserInfo(userHandle){
+  //send GET request with axios
+  axios.get(`https://api.github.com/users/${userHandle}`)
   //console.log successful GET request
   .then((response) => {
     console.log(response);
@@ -18,6 +19,8 @@ axios.get('https://api.github.com/users/KirstenS13')
   .catch((error) => {
     console.log(error)
   })
+}
+
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -40,7 +43,7 @@ axios.get('https://api.github.com/users/KirstenS13')
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = ['ArianaShackelford', 'tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell'];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -135,6 +138,9 @@ function userCardConstructor(userInfoObj) {
 
   return card;
 }
+
+//create card of my info
+getUserInfo('KirstenS13');
 
 /* List of LS Instructors Github username's: 
   tetondan
