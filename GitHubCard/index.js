@@ -3,16 +3,21 @@
            https://api.github.com/users/<your name>
 */
 
+//select cards from html
+const cards = document.querySelector('.cards');
+
 //send GET request with axios
-/* axios.get('https://api.github.com/users/KirstenS13')
+axios.get('https://api.github.com/users/KirstenS13')
   //console.log successful GET request
   .then((response) => {
-    console.log(response)
+    console.log(response);
+    const newUserCard = userCardConstructor(response);
+    cards.appendChild(newUserCard);
   })
   //console.log failed GET request
   .catch((error) => {
     console.log(error)
-  }) */
+  })
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -67,7 +72,7 @@ function userCardConstructor(userInfoObj) {
   //create img
   const cardImg = document.createElement('img');
   //give img src attribute
-  cardImg.src = userInfoObj.imageUrl;
+  cardImg.src = userInfoObj.avatar_url;
 
   //create card-info div
   const cardInfo = document.createElement('div');
@@ -83,7 +88,7 @@ function userCardConstructor(userInfoObj) {
   const username = document.createElement('p');
   //give first p element class of 'username'
   username.classList.add('username');
-  username.textContent = userInfoObj.username;
+  username.textContent = userInfoObj.login;
 
   //create location p element
   const location = document.createElement('p');
@@ -108,12 +113,12 @@ function userCardConstructor(userInfoObj) {
   //create an 'a' element
   const profileLink = document.createElement('a');
   //give 'a' element an href attribute
-  profileLink.href = userInfoObj.address;
-  profileLink.textContent = userInfoObj.address;
+  profileLink.href = userInfoObj.url;
+  profileLink.textContent = userInfoObj.url;
 
   //append 'a' element to third p element
   profile.appendChild(profileLink);
-  
+
   //append h3 and 6 p elements to card-info div
   cardInfo.appendChild(name);
   cardInfo.appendChild(username);
@@ -126,6 +131,8 @@ function userCardConstructor(userInfoObj) {
   //append img and card-info div to card div
   card.appendChild(cardImg);
   card.appendChild(cardInfo);
+
+  return card;
 }
 
 /* List of LS Instructors Github username's: 
